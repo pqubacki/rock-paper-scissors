@@ -1,14 +1,13 @@
-var choices = ["ROCK", "PAPER", "SCISSORS"];
+let choices = ["ROCK", "PAPER", "SCISSORS"];
 
 const computerSelection = () => choices[Math.floor(Math.random() * 3)];
 const playerSelection   = () => {
-    while((input = prompt("Enter valid user selection ('Rock','Paper','Scissors'): ").toUpperCase())){
+    while(input = prompt("Enter valid user selection ('Rock','Paper','Scissors'): ").toUpperCase()){
         if(choices.includes(input)){
             break;
         }
-    }
     return input;
-}
+}}
 
 const gameScore = {
     player: 0,
@@ -37,11 +36,12 @@ const playRound = () => {
     }
 
 const playGame = () => {
+
     for(let i=0; i<5; i++){
         playRound();
     }
-    console.log(gameScore);
 
+    console.log(gameScore);
     gameScore.player = 0;
     gameScore.computer = 0;
 }
